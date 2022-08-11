@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+section{
+  position: absolute;
+  left: 0;
+  right: 0;
+  content: '';
+  mix-blend-mode: overlay;
+}
+
+.bg_dark{
+  background: linear-gradient(180deg, #0E0931 0%, #83476B 33.7%, #D36977 50%);
+  opacity: 1;
+  height: 100vh;
+  z-index: -1;          /*10 Z-INDEX MARKER*/
+}
+
+.bg_light{
+  background: linear-gradient(180deg, #F2CAC3 0%, #FEF4E0 33.7%, #F2CAC3 50%);
+  opacity: 0;
+  height: 100vh;
+  z-index: -2;          /*11 Z-INDEX MARKER*/
+}
+
+.noise{
+  background: url('noise\ sky.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.2;
+  height: 100vh;
+  z-index: 7;          /*2 Z-INDEX MARKER*/
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  margin: 0 2.5vh 0 3vh;
+  position: relative;
+  z-index: 8;           /*1 Z-INDEX MARKER*/
+}
+
+.mode_btn{
+  width: 5vh;
+  height: 5vh;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: none;
+	cursor: pointer;
+}
+
+.logo{
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 3.5vh;
+  color: #FFFFFF;
+  margin-bottom: 0.7vh;
+  cursor: default;
+}
+
+.moon{
+  background: conic-gradient(from 180deg at 50% 0%, #FFFFFF 0deg, rgba(255, 255, 255, 0.2) 360deg);
+  transform: rotate(315deg);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(100vw - 47vh); 
+  /*47vh = 32vh(left of sun) + 15vh(width of sun)*/
+  width: 15vh;
+  height: 15vh;
+  top: 8vh;
+  z-index: 0;          /*9 Z-INDEX MARKER*/
+}
+
+.sun{
+  position: absolute;
+  left: 32vh;
+  top: 110vh;
+  z-index: 0;          /*9 Z-INDEX MARKER*/
+}
+
+.cloud{
+  stop-color: #482C55;
+}
+
+.cloud_left{
+  position: absolute;
+  left: 5vh;
+  top: 26vh;
+  z-index: 1;          /*8 Z-INDEX MARKER*/
+  opacity: 0.96;
+}
+
+.cloud_mid{
+  position: absolute;
+  left: 54vh;
+  top: 18vh;
+  z-index: 1;          /*8 Z-INDEX MARKER*/
+  opacity: 0.96;
+}
+
+.cloud_rig{
+  position: absolute;
+  left: 140vh;
+  top: 24vh;
+  z-index: 1;          /*8 Z-INDEX MARKER*/
+  opacity: 0.96;
+}
+
+.cloud_ex{
+  position: absolute;
+  left: 208vh;
+  top: 28vh;
+  z-index: 1;          /*8 Z-INDEX MARKER*/
+  opacity: 0.96;
+}
+
+.mt_b_top{
+  stop-color: #0A254D;
+}
+
+.mt_btm{
+  stop-color: #0E0931;
+}
+
+.mt_back{
+  position: absolute;
+  z-index: 2;          /*7 Z-INDEX MARKER*/
+  left: -3.5vh;
+  top: 28vh;
+}
+
+.mt_m_top{
+  stop-color: #83476B;
+}
+
+.mt_mid1{
+  position: absolute;
+  z-index: 3;          /*6 Z-INDEX MARKER*/
+  left: 16vh;
+  top: 40vh;
+}
+
+.mt_mid2{
+  position: absolute;
+  z-index: 4;          /*5 Z-INDEX MARKER*/
+  left: 52vh;
+  top: 35vh;
+}
+
+.mt_f_top{
+  stop-color: #B45C72;
+}
+
+.mt_frt1{
+  position: absolute;
+  z-index: 5;          /*4 Z-INDEX MARKER*/
+  left: -14vh;
+  top: 52vh;
+}
+
+.mt_frt2{
+  position: absolute;
+  z-index: 6;          /*3 Z-INDEX MARKER*/
+  left: 94vh;
+  top: 55vh;
+}
+
+@media screen and (max-width: 126vh){
+  .cloud_mid{
+    display: none;
+  }
+
+  .cloud_left{
+    left: 2vh;
+    top: 21vh;
+  }
+  .cloud_left svg{
+    width: 45vh;
+    height: 25vh;
+  }
+
+  .cloud_rig{
+    left: 56vh;
+    top: 21vh;
+  }
+  .cloud_rig svg{
+    width: 60vh;
+    height: 28vh;
+  }
+}
+
+@media screen and (max-width: 115vh){
+  .cloud_mid{
+    display: none;
+  }
+
+  .cloud_left{
+    left: -2vh;
+    top: 21vh;
+  }
+  .cloud_left svg{
+    width: 45vh;
+    height: 25vh;
+  }
+
+  .cloud_rig{
+    left: 48vh;
+    top: 21vh;
+  }
+  .cloud_rig svg{
+    width: 60vh;
+    height: 28vh;
+  }
+
+  .sun, .moon{
+    left: calc(50% - 7.5vh);
+  }
+}
+
+@media screen and (max-width: 109vh){
+  .cloud_mid, .mt_frt2, .mt_mid2{
+    display: none;
+  }
+
+  .cloud_left{
+    left: -2vh;
+    top: 21vh;
+  }
+  .cloud_left svg{
+    width: 45vh;
+    height: 25vh;
+  }
+
+  .cloud_rig{
+    left: 48vh;
+    top: 21vh;
+  }
+  .cloud_rig svg{
+    width: 60vh;
+    height: 28vh;
+  }
+
+  .sun, .moon{
+    left: calc(50% - 7.5vh);
+  }
+}
+
+@media screen and (max-width: 450px){
+  .cloud_left{
+    left: -2vh;
+    top: 21vh;
+  }
+
+  .sun, .moon{
+    left: calc(50% - 7.5vh);
+  }
+
+  .mt_mid1{
+    left: -10vh;
+    top: 43vh;
+  }
+
+  .mt_frt1{
+    left: -26vh;
+    top: 58vh;
+  }
+}
